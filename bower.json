@@ -1,0 +1,18 @@
+{
+  "name": "latitude",
+  "description": "event registration",
+  "main": "index.js",
+  "author": "selvaganeshrajam@gmail.com",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ]
+}
