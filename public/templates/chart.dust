@@ -1,0 +1,48 @@
+{>"layouts/master" /} 
+{<navContent}
+
+{/navContent}
+{<bodyContent} 
+<div class="container">
+
+    <h3>Chart</h3>
+    <canvas id="myChart" width="400" height="400"></canvas>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.js"></script>
+
+<script>
+var data = {
+    labels: [
+        "Self",
+        "Corporate",
+        "Group",
+        "Others"
+    ],
+    datasets: [
+        {
+            data: [300, 50, 100,120],
+            backgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56",
+                "#FFCE66",
+            ],
+            hoverBackgroundColor: [
+                "#FF6384",
+                "#36A2EB",
+                "#FFCE56",
+                "#EECE66",
+            ]
+        }]
+};
+var ctx = document.getElementById("myChart");
+var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data
+});
+
+</script>
+
+
+{/bodyContent}
