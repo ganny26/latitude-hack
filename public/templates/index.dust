@@ -1,0 +1,54 @@
+{>"layouts/master" /}
+
+{<bodyContent} 
+ <div class="row" style="margin-top:30px;">
+
+    <form class="col s12" method="POST" action="/preview">
+ <input type='hidden' name='_csrf' value="{_csrf}">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">supervisor_account</i>
+          <input id="txtName"  name="txtName" type="text">
+          <label for="txtName">Full Name</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">phone</i>
+          <input id="txtMobile" name="txtMobile" type="text">
+          <label for="txtMobile">Mobile</label>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">email</i>
+          <input name="txtEmail" id="txtEmail"type="text">
+          <label for="txtEmail">Email</label>
+        </div>
+        <div class="input-field col s12" style="padding-top:30px">
+          <i class="material-icons prefix">account_box</i>
+          <input name="fileIdentity" id="fileIdentity" type="file" accept="image/*">
+         
+        </div>
+        <div class="input-field col s12" style="padding-top:30px">
+              <i class="material-icons prefix">label_outline</i>
+                <select name="ddType">
+                    <option value="" disabled selected>Registration Type</option>
+                    <option value="Self">Self</option>
+                    <option value="Corporate">Corporate</option>
+                    <option value="Group">Group</option>
+                    <option value="Other">Others</option>
+                </select>
+        </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">star_rate</i>
+          <input name="txtTicket" id="txtTicket" type="text">
+          <label for="txtTicket">No of tickets</label>
+        </div>
+        <div class="input-field col s12">
+            <button type="submit" class="waves-effect waves-light btn">Preview</button>
+         
+        </div>
+         <div class="input-field col s12">
+            <button  type="submit"  class="waves-effect waves-light btn" formaction="/save">Save</button>
+        </div>
+      </div>
+    </form>
+  </div>
+    {/bodyContent}

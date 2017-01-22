@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8" />
+  <title>{+pageTitle}Latitude Event Registration{/pageTitle}</title>
+   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link rel="stylesheet" href="/css/app.css">
+  
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+</head>
+
+<body>
+  {+navContent}
+   <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Latitude Event Regitration</a>
+       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/summary">Admin Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  {/navContent}
+  <div class="container">
+    {+bodyContent/}
+  </div>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+      
+  </script>
+   <script data-main="/js/app" src="/components/requirejs/require.js"></script>
+
+</body>
+
+</html>

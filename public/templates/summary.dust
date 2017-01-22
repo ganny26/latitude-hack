@@ -1,0 +1,33 @@
+{>"layouts/master"/} 
+{<bodyContent} 
+<div class="container">
+    <table class="bordered">
+        <thead>
+            <tr>
+                <th data-field="id">Registration No</th>
+                <th data-field="name">Full Name</th>
+                <th data-field="price">Mobile</th>
+                <th data-field="price">Email</th>
+                <th data-field="price">Type</th>
+                <th data-field="price">Number of tickets</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {#data}
+            <tr>
+                <td>{registernumber}</td>
+                <td>{username}</td>
+                <td>{mobile}</td>
+                <td>{email}</td>
+                <td>{srctype}</td>
+                <td>{ticket}</td>
+            </tr>
+            {/data}
+
+        </tbody>
+    </table>
+
+    </div>
+
+    {/bodyContent}

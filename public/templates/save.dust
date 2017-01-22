@@ -1,0 +1,10 @@
+{>"layouts/master" /} 
+{<bodyContent} 
+<div class="container">
+
+    <h3>Data Saved Succesfully</h3>
+     <a class="waves-effect waves-light btn" href="/">Register New Member</a>
+
+</div>
+
+    {/bodyContent}
