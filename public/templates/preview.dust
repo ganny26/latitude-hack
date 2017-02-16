@@ -21,19 +21,16 @@
                 <td>{email}</td>
             </tr>
             <tr>
-                <td>Ticket</td>
+                <td>Number of ticket</td>
                 <td>{ticket}</td>
             </tr> 
             <tr>
                 <td>Source Type</td>
                 <td>{srctype}</td>
             </tr>
-             <tr>
-                <td>Source Type</td>
-                <td>{srctype}</td>
-            </tr>
             <tr>
-                <a class="waves-effect waves-light btn" href="/">Go Back</a>
+            <td class="backBtn"> <a class="waves-effect waves-light btn" href="/">Go Back</a></td>
+               
             </tr>
         </tbody>
     </table>

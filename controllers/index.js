@@ -1,9 +1,15 @@
 'use strict';
 var randomID = require("random-id");
 var mongoose = require('mongoose');
+var multer = require('multer');
+
 mongoose.connect('localhost:27017/test');
+
+
 var Schema = mongoose.Schema;
 
+
+//var upload = multer({ dest: __dirname + 'controllers/uploads/' });
 //user schema for mongo db
 var userDataSchema = new Schema({
     registernumber: { type: String, required: true, default: randomID(5, "0") },
@@ -51,7 +57,14 @@ module.exports = function (router) {
 
     //main route
     router.get('/', function (req, res) {
-        res.render('index');
+        if(req.session.formdata){
+            var formdata = req.session.formdata;
+            console.log(req.session.formdata);
+            res.render('index',{sessdata: formdata});
+        }else{
+            res.render('index');
+        }
+        
     });
 
     //chart route
@@ -62,6 +75,7 @@ module.exports = function (router) {
 
     //save register details
     router.post('/save', function (req, res) {
+
         var item = {
             username: req.body.txtName,
             mobile: req.body.txtMobile,
@@ -81,6 +95,9 @@ module.exports = function (router) {
 
     //preview register details
     router.post('/preview', function (req, res) {
+   
+        req.session.formdata = req.body;
+
         res.render('preview', {
             username: req.body.txtName,
             mobile: req.body.txtMobile,

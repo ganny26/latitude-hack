@@ -2,6 +2,8 @@
 
 var express = require('express');
 var kraken = require('kraken-js');
+var session = require('express-session');
+
 
 
 var options, app;
@@ -22,6 +24,8 @@ options = {
 
 app = module.exports = express();
 app.use(kraken(options));
+
+app.use(session({secret: "latitude"}));
 
 app.on('start', function () {
     console.log('Application ready to serve requests.');
