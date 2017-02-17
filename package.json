@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "adaro": "^0.1.10",
+    "busboy": "^0.2.14",
     "chart.js": "^2.4.0",
+    "connect-busboy": "0.0.2",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-dustjs-i18n": "^1.0.1",
@@ -21,6 +23,7 @@
     "engine-munger": "^0.2.9",
     "eslint": "^1.10.3",
     "express": "^4.12.2",
+    "express-session": "^1.15.1",
     "kraken-js": "^1.0.3",
     "mongodb": "^2.2.21",
     "mongoose": "^4.7.7",

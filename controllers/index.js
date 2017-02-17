@@ -1,15 +1,18 @@
 'use strict';
-var randomID = require("random-id");
+var randomID = require('random-id');
 var mongoose = require('mongoose');
+
 var multer = require('multer');
 
-mongoose.connect('localhost:27017/test');
+var upload = multer({
+    dest: 'img/'
+});
 
+mongoose.connect('localhost:27017/test');
 
 var Schema = mongoose.Schema;
 
 
-//var upload = multer({ dest: __dirname + 'controllers/uploads/' });
 //user schema for mongo db
 var userDataSchema = new Schema({
     registernumber: { type: String, required: true, default: randomID(5, "0") },
@@ -74,8 +77,8 @@ module.exports = function (router) {
 
 
     //save register details
-    router.post('/save', function (req, res) {
-
+    router.post('/save',  upload.single('profile'),function (req, res) {
+        console.log(req.file);
         var item = {
             username: req.body.txtName,
             mobile: req.body.txtMobile,
@@ -94,16 +97,18 @@ module.exports = function (router) {
     });
 
     //preview register details
-    router.post('/preview', function (req, res) {
-   
+router.post('/preview',upload.single('profile'),function (req, res) {
+     
         req.session.formdata = req.body;
-
+       //console.log("File: ",req.file); 
         res.render('preview', {
             username: req.body.txtName,
             mobile: req.body.txtMobile,
             email: req.body.txtEmail,
             ticket: req.body.txtTicket,
-            srctype: req.body.ddType
+            srctype: req.body.ddType,
+            imageurl:req.file
         });
+        
     });
 };

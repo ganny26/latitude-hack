@@ -3,7 +3,7 @@
 {<bodyContent} 
  <div class="row" style="margin-top:30px;">
 
-    <form class="col s12" method="POST" action="/preview">
+    <form class="col s12" method="POST" action="/preview" enctype="multipart/form-data">
  <input type='hidden' name='_csrf' value="{_csrf}">
       <div class="row">
         <div class="input-field col s12">
@@ -42,11 +42,12 @@
           <input name="txtTicket" id="txtTicket" type="number" value="{sessdata.txtTicket}" required="required">
           <label for="txtTicket">No of tickets</label>
         </div>
-        <div class="input-field col s12">
+        <div class="row">
+        <div class="input-field col s6">
             <button type="submit" id="btnPreview" class="waves-effect waves-light btn">Preview</button>
          
         </div>
-         <div class="input-field col s12">
+         <div class="input-field col s6">
             <button  type="submit"  id="btnSave" class="waves-effect waves-light btn" formaction="/save">Save</button>
         </div>
       </div>
